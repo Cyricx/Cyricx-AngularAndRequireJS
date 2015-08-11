@@ -1,0 +1,41 @@
+﻿<div data-ng-controller="ManageTicketController">
+    <h3>{{title}}</h3>
+
+    <form id="ManageTicket">
+
+        <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" class="form-control" id="Title" name="Title"
+                   data-ng-model="item.Title" required />
+        </div>
+        <div class="form-group">
+            <label for="SprintDate">Sprint Date</label>
+            <input type="date" class="form-control" id="SprintDate" name="SprintDate"
+                   data-ng-model="item.SprintDate" required />
+        </div>
+        <div>
+            <label for="Details">Details</label>
+            <textarea data-ng-model="item.Details" class="form-control" id="Details"
+                      name="Details" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>
+                Closed?
+                <input type="checkbox" data-ng-model="item.IsClosed"
+                       id="IsClosed" name="IsClosed" />
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="TicketCategoryID">Category</label>
+            <select name="TicketCategoryID" id="TicketCategoryID"
+                    data-ng-model="item.TicketCategoryID"
+                    required
+                    data-ng-options="cat.TicketCategoryID as cat.Name for cat in categories"></select>
+        </div>
+
+        <button type="submit" class="btn btn-default" data-ng-click="submitTicket(item)">Submit</button>
+
+        <a href="#/tickets" class="btn btn-default">Cancel</a>
+    </form>
+
+</div>

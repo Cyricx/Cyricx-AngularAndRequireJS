@@ -1,0 +1,18 @@
+namespace AngularAndRequireJS.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class ticketimportantproperty : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Tickets", "TheImportantPropertyIForgotAbout", c => c.String());
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Tickets", "TheImportantPropertyIForgotAbout");
+        }
+    }
+}

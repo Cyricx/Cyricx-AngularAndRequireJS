@@ -1,0 +1,58 @@
+﻿@model AngularAndRequireJS.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TicketCategory.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TicketCategory.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsClosed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsClosed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SprintDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SprintDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TicketID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

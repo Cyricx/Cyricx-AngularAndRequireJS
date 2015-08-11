@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "AngularApp";
+}
+
+<div data-ng-app="MainApp" data-ng-cloak>
+
+    <h2>AngularApp</h2>
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#/">Test Home</a>
+            </li>
+            <li>
+                <a href="#/tickets">Tickets</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div data-ng-view></div>
+
+</div>
+
+@section scripts {
+
+<script src="~/bower/angular/angular.min.js"></script>
+<script src="~/bower/angular-resource/angular-resource.min.js"></script>
+<script src="~/bower/angular-route/angular-route.min.js"></script>
+<script src="~/Scripts/Application/MainApp.js"></script>
+<script src="~/Scripts/Application/Modules/Tickets/TicketApp.js"></script>
+<script src="~/Scripts/Application/Modules/Tickets/TicketController.js"></script>
+<script src="~/Scripts/Application/Modules/Tickets/TicketService.js"></script>
+<script src="~/Scripts/Application/Modules/Tickets/ManageTicketController.js"></script>
+<script src="~/Scripts/Application/Modules/TicketCategories/TicketCategoryApp.js"></script>
+<script src="~/Scripts/Application/Modules/TicketCategories/TicketCategoryService.js"></script>
+}

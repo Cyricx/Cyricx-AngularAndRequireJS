@@ -1,0 +1,36 @@
+﻿<div data-ng-controller="TicketController">
+    {{quickTest}}
+    <br />
+    You have {{tickets.length}} tickets!
+    <br />
+    Show Closed? <input type="checkbox" data-ng-model="showClosed" />
+    <br />
+    <a href="#/tickets/create" class="btn btn-default">Create New Ticket</a>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th data-ng-click="changeOrder('Title')">Title</th>
+                <th data-ng-click="changeOrder('TicketCategory.Name')">Category</th>
+                <th data-ng-click="changeOrder('SprintDate')">Sprint Date</th>
+                <th>Is Closed?</th>
+                <th>Admin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="ticket in tickets | filter: {IsClosed:showClosed} | orderBy: orderColumn">
+                <td>{{ticket.TicketID}}</td>
+                <td>{{ticket.Title}}</td>
+                <td>{{ticket.TicketCategory.Name}}</td>
+                <td>{{ticket.SprintDate | date: 'MMM, d yyyy'}}</td>
+                <td><input type="checkbox" data-ng-model="ticket.IsClosed" 
+                           data-ng-change="updateTicket(ticket)" /></td>
+                <td>
+                    <a data-ng-href="{{'#/tickets/' + ticket.TicketID}}">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
