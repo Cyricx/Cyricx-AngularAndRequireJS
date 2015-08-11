@@ -10,7 +10,7 @@ define([
 ], function (jq, ang) {
     //since we don't need test to access anything and it doesn't create a variable, nothing to access
     //we can disregard it!
-    jq('body').css('backgroundColor', 'grey');//no errors!!
+    jq('body').css('backgroundColor', 'lightblue');//no errors!!
 
     //this file is responsible for applying our ngApp attribute... dynamically!
     ang.bootstrap(document, ['MainApp']);
