@@ -118,6 +118,7 @@
     <Content Include="Scripts\Application\MainApp.Bootstrap.js" />
     <Content Include="Scripts\Application\MainApp.js" />
     <Content Include="Scripts\Application\MainApp.min.js" />
+    <Content Include="Scripts\Application\MainApp.routes.js" />
     <Content Include="Scripts\Application\Modules\TicketCategories\index.js" />
     <Content Include="Scripts\Application\Modules\TicketCategories\TicketCategoryApp.js" />
     <Content Include="Scripts\Application\Modules\TicketCategories\TicketCategoryService.js" />
