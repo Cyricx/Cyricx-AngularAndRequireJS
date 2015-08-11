@@ -1,42 +1,53 @@
-﻿angular.module("TicketApp").controller("ManageTicketController", [
-    '$scope',
-    '$route',
-    'TicketService',
-    'TicketCategoryService',
-    '$location',
-    function ($scope, $route, TicketService, TicketCategoryService, $location) {
-        var id = $route.current.params.id;
-        if (id) {
-            $scope.title = "Manage Ticket #" + id;
+﻿//define a dependency on ticket app
+define([
+    './TicketApp'
+], function (module) {
 
-            //$scope.item = TicketService.getItem(id);
+    //use the returned module to chain on and create the controller
 
-            //Fix to parse json dates
-            TicketService.getItem(id).$promise.then(function (response) {
-                response.SprintDate = new Date(response.SprintDate);
-                $scope.item = response;
-            });
-        } else {
-            $scope.item = { IsClosed: false };
-        }
+    //angular.module("TicketApp")
 
-
-        $scope.categories = TicketCategoryService.getList();
-
-        $scope.submitTicket = function (item) {
+    module.controller("ManageTicketController", [
+        '$scope',
+        '$route',
+        'TicketService',
+        'TicketCategoryService',
+        '$location',
+        function ($scope, $route, TicketService, TicketCategoryService, $location) {
+            var id = $route.current.params.id;
             if (id) {
-                //remove nested ticket category object so .net doesn't freak out!
-                item.TicketCategory = undefined;
-                TicketService.updateItem(item).then(function () {
-                    $location.path('/tickets');
-                    $route.reload();//similar to re-databinding
+                $scope.title = "Manage Ticket #" + id;
+
+                //$scope.item = TicketService.getItem(id);
+
+                //Fix to parse json dates
+                TicketService.getItem(id).$promise.then(function (response) {
+                    response.SprintDate = new Date(response.SprintDate);
+                    $scope.item = response;
                 });
             } else {
-                TicketService.createItem(item).$promise.then(function () {
-                    $location.path('/tickets');
-                    $route.reload();//similar to re-databinding
-                });
+                $scope.item = { IsClosed: false };
+            }
+
+
+            $scope.categories = TicketCategoryService.getList();
+
+            $scope.submitTicket = function (item) {
+                if (id) {
+                    //remove nested ticket category object so .net doesn't freak out!
+                    item.TicketCategory = undefined;
+                    TicketService.updateItem(item).then(function () {
+                        $location.path('/tickets');
+                        $route.reload();//similar to re-databinding
+                    });
+                } else {
+                    TicketService.createItem(item).$promise.then(function () {
+                        $location.path('/tickets');
+                        $route.reload();//similar to re-databinding
+                    });
+                }
             }
         }
-    }
-]);
+    ]);
+
+});

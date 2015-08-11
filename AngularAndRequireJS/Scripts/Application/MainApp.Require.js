@@ -6,10 +6,10 @@ require.config({
 	*/
 	paths: {
 		'testing': '../Test', //do not add .js to the end, require will do that for you
-		'jquery': '../../bower/jQuery/dist/jquery.min', //require js takes care of the .js
-		'angular': '../../bower/angular/angular.min',
-		'angularResource': '../../bower/angular-resource/angular-resource.min',
-		'angularRoute': '../../bower/angular-route/angular-route.min',
+		'jquery': '../../bower/jQuery/dist/jquery', //require js takes care of the .js
+		'angular': '../../bower/angular/angular',
+		'angularResource': '../../bower/angular-resource/angular-resource',
+		'angularRoute': '../../bower/angular-route/angular-route',
 	},
 
 	//SHIM: allows you to shim (or shiv) things together!

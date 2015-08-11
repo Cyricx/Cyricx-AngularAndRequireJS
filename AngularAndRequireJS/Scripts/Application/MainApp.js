@@ -6,7 +6,8 @@ define([
     'angularRoute',
     'angularResource',
     //We still need to wire up the modules..
-    './Modules/TicketCategories/index'
+    './Modules/TicketCategories/index',
+    './Modules/Tickets/index'
 ], function (angular) {
     //the below module definitions must still happen!!
     angular.module("MainApp", ['ngRoute', 'TicketApp', 'TicketCategoryApp']);

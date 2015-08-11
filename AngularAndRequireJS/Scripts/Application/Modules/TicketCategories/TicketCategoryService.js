@@ -1,6 +1,7 @@
 ﻿//We need the file that created the ticket category app
 define([
-    './TicketCategoryApp' //and it returns the module it created
+    './TicketCategoryApp', //and it returns the module it created
+    'angularResource'
 ], function (app) {
     //no need to restate the name!
     //angular.module("TicketCategoryApp")
