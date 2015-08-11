@@ -5,9 +5,17 @@ require.config({
 			all paths are relative to this file
 	*/
 	paths: {
-		'testing':'../Test' //do not add .js to the end, require will do that for you
+		'testing': '../Test', //do not add .js to the end, require will do that for you
+		'jquery': '../../bower/jQuery/dist/jquery.min' //require js takes care of the .js
 	},
 
+	//SHIM: allows you to shim (or shiv) things together!
+	//there are two uses - one, for exports (what does a library create) and the other dependencies
+	shim: {
+		'jquery': {
+			exports: '$'
+		}
+	},
 
 	//deps: is used to declare a file that must be loaded before all else. This is typically
 	//used to hook up angular
