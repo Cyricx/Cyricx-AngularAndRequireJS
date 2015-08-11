@@ -4,7 +4,9 @@ define([
     //here we are JUST defining the script files that must be loaded first
     'angular',
     'angularRoute',
-    'angularResource'
+    'angularResource',
+    //We still need to wire up the modules..
+    './Modules/TicketCategories/index'
 ], function (angular) {
     //the below module definitions must still happen!!
     angular.module("MainApp", ['ngRoute', 'TicketApp', 'TicketCategoryApp']);
