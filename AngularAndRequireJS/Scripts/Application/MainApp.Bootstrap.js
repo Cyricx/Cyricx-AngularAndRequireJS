@@ -5,8 +5,15 @@
 define([
     'jquery',
     //'testing'
-], function (jq) {
+    'angular',
+    './MainApp'
+], function (jq, ang) {
     //since we don't need test to access anything and it doesn't create a variable, nothing to access
     //we can disregard it!
     jq('body').css('backgroundColor', 'grey');//no errors!!
+
+    //this file is responsible for applying our ngApp attribute... dynamically!
+    ang.bootstrap(document, ['MainApp']);
+    //however, we can't attach something until it is created, so let's tell this file that
+    //before it runs, it neds to run the MainApp.js file
 });
