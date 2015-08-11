@@ -115,6 +115,7 @@
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
     <Content Include="gruntfile.js" />
+    <Content Include="Scripts\Application\MainApp.Bootstrap.js" />
     <Content Include="Scripts\Application\MainApp.js" />
     <Content Include="Scripts\Application\MainApp.min.js" />
     <Content Include="Scripts\Application\Modules\TicketCategories\TicketCategoryApp.js" />
@@ -126,6 +127,7 @@
     <Content Include="Scripts\Application\Modules\Tickets\Tickets.html" />
     <Content Include="Scripts\Application\Modules\Tickets\TicketService.js" />
     <Content Include="Scripts\Application\TestView.html" />
+    <Content Include="Scripts\Test.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +183,7 @@
     <Content Include="Views\Home\AngularApp.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\Application\MainApp.min.js.map" />
+    <Content Include="Scripts\Application\MainApp.Require.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

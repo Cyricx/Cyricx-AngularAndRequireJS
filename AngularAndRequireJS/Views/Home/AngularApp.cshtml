@@ -22,6 +22,11 @@
 
 @section scripts {
 
+@* RequireJS is an asynchronous module loader. It works by linking to the main require.js library
+and then specifying with the data-main attribute the configuration file. *@
+
+<script src="~/bower/requirejs/require.js" data-main="@Url.Content("~/Scripts/Application/MainApp.Require.js")"></script>
+
 <script src="~/bower/angular/angular.min.js"></script>
 <script src="~/bower/angular-resource/angular-resource.min.js"></script>
 <script src="~/bower/angular-route/angular-route.min.js"></script>
